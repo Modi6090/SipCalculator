@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>SIP Calculator</h1>
+        <div class="form-group">
+            <label for="initialInvestment">Amount Invested at start of year:</label>
+            <input type="number" id="initialInvestment" placeholder="₹ 1,00,00,000">
+        </div>
+
+        <div class="form-group">
+            <label for="investmentPerYear">Amount Invested per year:</label>
+            <input type="number" id="investmentPerYear" placeholder="₹ 2,000">
+        </div>
+
+        <div class="form-group">
+            <label for="annualIncrease">Annual Increase in Investment Amount (%) :</label>
+            <input type="number" id="annualIncrease" placeholder="0">
+        </div>
+
+        <div class="form-group">
+            <label for="frequency">Frequency of Investment:</label>
+            <select id="frequency">
+                <option value="Monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Annually">Annually</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="years">No. of Years for which amount is invested:</label>
+            <input type="number" id="years" placeholder="20">
+        </div>
+
+        <div class="form-group">
+            <label for="rateOfReturn">Rate of Return (%):</label>
+            <input type="number" id="rateOfReturn" placeholder="15">
+        </div>
+
+        <div class="form-group">
+            <label for="inflation">Inflation Considered (%):</label>
+            <input type="number" id="inflation" placeholder="0">
+        </div>
+
+        <div class="form-group">
+            <label for="investmentType">Lumpsum / SIP:</label>
+            <select id="investmentType">
+                <option value="SIP">SIP</option>
+                <option value="Lumpsum">Lumpsum</option>
+            </select>
+        </div>
+
+        <button onclick="calculateSIP()">Calculate</button>
+
+        <div class="result">
+            <h2>Results:</h2>
+            <p>Total Investment: ₹<span id="totalInvestment">0</span></p>
+            <p>Estimated Profit: ₹<span id="estimatedProfit">0</span></p>
+            <p>Final Value: ₹<span id="finalValue">0</span></p>
+        </div>
+
+        <canvas id="sipChart"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
